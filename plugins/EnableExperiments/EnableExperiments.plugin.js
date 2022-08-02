@@ -1,6 +1,6 @@
 /**
  * @name EnableExperiments
- * @version 0.0.1
+ * @version 0.0.2
  * @description Enables the experiments tab on discord.
  * @author sbot50
  * @authorLink https://github.com/sbot50/BDPlugins/tree/main/plugins
@@ -15,6 +15,11 @@
  module.exports = class EnableExperiments {
     start() {
         // Required function. Called when the plugin is activated (including after reloads)
+        console.log(storeExports);
+        storeExports.default.isDeveleoper = true;
+        storeExports.default["get isDeveloper"] = function () {
+            return true;
+        }
         console.log(storeExports);
     }
     stop() {
